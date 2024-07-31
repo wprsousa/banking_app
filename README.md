@@ -31,22 +31,34 @@ Este projeto simula um sistema de conta bancária simples, desenvolvido como par
 
 ## Estrutura do Projeto
 
-- **account.py**: Implementação da classe ContaBancaria
-- **input_utils.py**: Funções utilitárias para entrada de dados do usuário
-- **app.py**: Lógica principal do aplicativo bancário
-- **test_account.py**: Testes unitários para a classe ContaBancaria
-- **transactions.log**: Arquivo de log para transações bancárias (gerado automaticamente)
-- **input.log**: Arquivo de log para entradas do usuário (gerado automaticamente)
-- **README.md**: Este arquivo
+```sh
+banking_app/
+├── app/
+│   ├── init.py          
+│   ├── account.py           # Implementação da classe ContaBancaria
+│   ├── input_utils.py       # Funções utilitárias para entrada de dados do usuário
+│   ├── main.py              # Lógica principal do aplicativo bancário
+│   └── logs/                
+│       ├── init.py      
+│       ├── transactions.log # Arquivo de log para transações bancárias (gerado automaticamente)
+│       └── input.log        # Arquivo de log para entradas do usuário (gerado automaticamente)
+├── tests/
+│   ├── init.py          
+│   └── test_account.py      # Testes unitários para a classe ContaBancaria
+│   └── test_input_utils.py  # Testes unitários para as funções de entrada de dados
+├── .gitignore                
+├── requirements.txt         # Lista de dependências do projeto
+└── README.md                
+```
 
 ## Uso
 
 Para executar o aplicativo bancário, siga os passos abaixo:
 
-1. Execute o script `app.py`:
+1. Execute o script `main.py`:
 
     ```sh
-    python app.py
+    python main.py
     ```
 
 2. Siga as instruções no console para interagir com o sistema bancário.
@@ -61,7 +73,7 @@ Para executar o aplicativo bancário, siga os passos abaixo:
 Para executar os testes unitários, utilize o comando abaixo:
 
 ```sh
-python test_account.py
+pytest
 ```
 
 Os testes verificam a funcionalidade das operações de depósito, saque e transferência, assegurando que o sistema se comporte conforme o esperado.

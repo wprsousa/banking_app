@@ -1,6 +1,6 @@
 import unittest
 import logging
-from account import ContaBancaria
+from app.account import ContaBancaria
 
 
 class TestContaBancaria(unittest.TestCase):

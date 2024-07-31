@@ -1,8 +1,9 @@
+import logging
 from account import ContaBancaria
 from input_utils import obter_valor_input
-import logging
 
-logging.basicConfig(filename='transactions.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='app/logs/transactions.log', level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def main() -> None:
@@ -25,18 +26,21 @@ def main() -> None:
         print("4. Sair")
 
         escolha = input("Escolha uma opção (1-4): ")
-        logging.info(f'Opção escolhida: {escolha}')
 
         if escolha == "1":
+            logging.info(f'Opção escolhida: {escolha} - Depositar')
             valor_deposito = obter_valor_input("Informe o valor a ser depositado na Conta 1: R$")
             conta1.depositar(valor_deposito)
         elif escolha == "2":
+            logging.info(f'Opção escolhida: {escolha} - Sacar')
             valor_saque = obter_valor_input("Informe o valor a ser sacado da Conta 1: R$")
             conta1.sacar(valor_saque)
         elif escolha == "3":
+            logging.info(f'Opção escolhida: {escolha} - Transferir')
             valor_transferencia = obter_valor_input("Informe o valor a ser transferido da Conta 1 para a Conta 2: R$")
             conta1.transferir(conta2, valor_transferencia)
         elif escolha == "4":
+            logging.info(f'Opção escolhida: {escolha} - Sair')
             logging.info('Encerrando o aplicativo bancário')
             break
         else:
