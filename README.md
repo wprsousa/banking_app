@@ -58,7 +58,7 @@ Para executar o aplicativo bancário, siga os passos abaixo:
 1. Execute o script `main.py`:
 
     ```sh
-    python main.py
+    python -m app.main
     ```
 
 2. Siga as instruções no console para interagir com o sistema bancário.

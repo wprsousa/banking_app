@@ -1,13 +1,26 @@
 import logging
+import os
 
-input_logger = logging.getLogger('input_logger')
-input_logger.setLevel(logging.INFO)
-file_handler = logging.FileHandler('app/logs/input.log')
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-file_handler.setFormatter(formatter)
-input_logger.addHandler(file_handler)
 
-input_logger.propagate = False
+def configurar_logger(logger_name, filename):
+    """Configura o arquivo de log para salvar mensagens em um arquivo específico."""
+    log_directory = '/Users/wellingtonpedro/Documents/Processo Seletivo Itau/Python/banking_app/app/logs'
+    log_path = os.path.join(log_directory, filename)
+
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(logging.INFO)
+
+    file_handler = logging.FileHandler(log_path)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
+
+    logger.addHandler(file_handler)
+    logger.propagate = False
+
+    return logger
+
+
+input_logger = configurar_logger('input_logger', 'input.log')
 
 
 def obter_valor_input(mensagem: str) -> float:
