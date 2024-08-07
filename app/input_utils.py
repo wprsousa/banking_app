@@ -33,4 +33,4 @@ def obter_valor_input(mensagem: str) -> float:
             return valor
         except ValueError:
             input_logger.warning(f'Entrada inválida recebida: {entrada}')
-            print("Por favor, insira um valor numérico válido.")
+            print('Por favor, insira um valor numérico válido.')
